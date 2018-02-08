@@ -1,0 +1,177 @@
+<h1 style="text-align:center;font-size:60px;background-color:Darkblue;color:white;font-family:andalus;">T3A05-Javascript-Von</h1>
+<hr>
+<h2 align=center style="color:red;">Make 8 different types of if statements</h3>
+
+<h4 style="text-align:center;">
+<b>If x is Less than 6: </b><br>
+
+x=<input id="myText01" type=text value=4 size=15><br>
+ 
+<input type=button value="x=4,if x<6" onclick="{
+
+myTemp = ''
+
+x = document.getElementById('myText01').value
+
+
+if (x < 6) {
+    myTemp += 'Less than 6 <br>'
+ } else if (x == 6) {
+    myTemp += 'Equal to 6 <br>'
+  } else { 
+    myTemp += 'Greater than 6 <br>' }
+
+document.getElementById('myDiv01').innerHTML = myTemp
+
+
+}">
+
+<div id="myDiv01"></div><br>
+
+<hr><br>
+
+<b>If x is Greater than 45: </b><br>
+
+x=<input id="myText02" type=text value=99 size=15><br>
+
+<input type=button value="x=99,if x>45" onclick="{
+
+myTemp = ''
+
+x = document.getElementById('myText02').value
+
+
+if (x > 45) { 
+    myTemp += 'Greater than 45 <br>' 
+ } else if (x == 45) {
+    myTemp += 'Equal to 45 <br>'
+ } else { myTemp += 'Less than 45 <br>' }
+
+document.getElementById('myDiv02').innerHTML = myTemp
+
+}">
+
+<div id="myDiv02"></div><br>
+
+<hr><br>
+
+<b>If x is Equal to -23: </b><br>
+
+x=<input id="myText03" type=text value=-23 size=15><br>
+
+<input type=button value="x=-23,if x==-23" onclick="{
+
+myTemp = ''
+
+x = document.getElementById('myText03').value
+
+if (x == -23) {
+    myTemp += 'Equal to -23 <br>' 
+} else if (x < -23) { 
+    myTemp += 'Less Than -23 <br>' 
+} else if (x > -23) {
+    myTemp += 'Greater than -23 <br>'}
+
+document.getElementById('myDiv03').innerHTML = myTemp
+
+}">
+
+<div id="myDiv03"></div><br>
+
+<hr><br>
+
+<b>If x is not Equal to -83.21: </b><br>
+
+x=<input id="myText04" type=text value=16.49 size=15><br>
+
+<input type=button value="x=16.49,if x!=-83.21" onclick="{
+
+myTemp = ''
+
+x = document.getElementById('myText04').value
+
+if (x != -83.21) {
+    myTemp += 'Not Equal to -83.21 <br>' 
+} else if (x == -83.21) { 
+    myTemp += 'Equal to -83.21 <br>'}
+
+
+document.getElementById('myDiv06').innerHTML = myTemp
+
+}">
+
+<div id="myDiv06"></div><br>
+
+<hr><br>
+
+<b>If x is Greater than or Equal to 6: </b><br>
+<input type=button value="x=9,if x>=6" onclick="{
+
+myTemp = ''
+
+x = 6
+
+if (x >= 6){ myTemp += 'Greater than or Equal to 6 <br>' }
+
+else { myTemp += 'Less than or Equal to 6 <br>' }
+
+document.getElementById('myDiv04').innerHTML = myTemp
+
+}">
+
+<div id="myDiv04"></div><br>
+
+<hr><br>
+
+<b>If x is Less than or Equal to 6: </b><br>
+<input type=button value="x=2,if x>=6" onclick="{
+
+myTemp = ''
+
+x = 2
+
+if (x <= 6){ myTemp += 'Less than or Equal to 6 <br>' }
+
+else { myTemp += 'Greater than or Equal to 6 <br>' }
+
+document.getElementById('myDiv05').innerHTML = myTemp
+
+}">
+
+<div id="myDiv05"></div><br>
+ 
+<hr><br>
+
+<b>If x is Greater than 6 and Less than 11: </b><br>
+<input type=button value="x=8,if x>6 and x<11" onclick="{
+
+myTemp = ''
+
+x = 8
+
+if (x > 6){ myTemp += 'Greater than 6 <br>' }
+if(x < 11){ myTemp += 'Less than 11 <br>' }
+document.getElementById('myDiv07').innerHTML = myTemp
+
+}">
+
+<div id="myDiv07"></div><br>
+
+<hr><br>
+
+<b>If x is between 1-100: </b><br>
+<input type=button value="x=50,if x is between 1-100" onclick="{
+
+myTemp = ''
+
+x = 50
+
+if (x > 6){ myTemp += 'Between 1-100 <br>' }
+   else { myTemp += 'Not Between 1-100 <br>' }
+document.getElementById('myDiv08').innerHTML = myTemp
+
+}">
+
+<div id="myDiv08"></div><br>
+
+
