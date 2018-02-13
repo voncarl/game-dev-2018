@@ -1,0 +1,21 @@
+<h1 style="text-align:center;font-size:60px;background-color:Darkblue;color:white;font-family:andalus;">Loops By Von</h1>
+
+<p style="text-align:center;font-size:60px;font-family:andalus;color:darkgreen;">
+x = <input id="myText01" type=text value=10 size=4><br>
+
+
+<input type=button value="Loop" onclick="{
+   myTemp = ''
+   myInput = document.getElementById('myText01').value
+
+   for (myLoop = 1; myLoop <= 5; myLoop++) {
+      myTemp += myLoop + ', '+ myInput + '<br>'
+   
+   }
+   
+    document.getElementById('myDiv01').innerHTML = myTemp
+}">
+
+
+<div id="myDiv01"></div><br>
+</p>
