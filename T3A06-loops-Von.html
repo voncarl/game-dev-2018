@@ -1,0 +1,43 @@
+<h1 style="text-align:center;font-size:60px;background-color:Darkblue;color:white;font-family:andalus;">Loops By Von</h1>
+
+<p align=center style="font-size:60px;font-family:andalus;color:darkgreen;">
+x = <input id="myText01" type=text value=10 size=4><br>
+
+
+<input type=button value="Your Code" onclick="{
+  myTemp = 0
+   document.getElementById('myDiv01').innerHTML = ''
+  for (myLoop=1; myLoop<=100; myLoop++){
+  
+    myTemp += parseInt(document.getElementById('myText01').value)
+    
+    document.getElementById('myDiv01').innerHTML +=
+      myLoop + ' =loop, the total = '+ myTemp + '<br>'
+  } 
+}"><br>
+
+<input type=button value="Click Me" onclick="{
+document.getElementById('myDiv01').innerHTML =
+   document.getElementById('myText01').value
+}"><br>
+
+<input type=button value="For Loop" onclick="{
+document.getElementById('myDiv01').innerHTML = ''
+for (myNum = 1; myNum<= 100; myNum++){
+  
+     if(myNum %2 == 1) {
+       document.getElementById('myDiv01').innerHTML += 
+       '>Loop is ' + myNum + '<br> </font>'
+ }  else {
+    document.getElementById('myDiv01').innerHTML += 
+     'Loop is '+ myNum + '<br>'
+    }
+  }
+ 
+ document.getElementById('myDiv01').innerHTML +=
+   document.getElementById('myText01').value
+  
+}"><br>
+
+<div id="myDiv01">Output here</div>
+</p>
