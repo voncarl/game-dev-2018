@@ -4,7 +4,20 @@ function myCheckKeys(event){
     document.getElementById('myDiv01').innerHTML += 
        String.fromCharCode(event.keyCode)
 
+     if (String.fromCharCode(event.keyCode) == 'A') {
+
+       document.getElementById('myAnswer').value =
+         parseFloat(document.getElementById('myInput01').value) +
+         parseFloat(document.getElementById('myInput02').value) 
+
+
 }
+
+
+
+
+}
+
 </script>
 <body onKeyDown="{myCheckKeys(event)}"> 
 
@@ -20,6 +33,12 @@ h2 {border: 5px groove black;
 
 <h2 style="text-align:center;font-size:60px;;background-color:darkblue;color:white;font-family:andalus;">T3A11-Storage-Von</h1>
 
-A Floating Point Number<input id="myInput" type=text value=3.14>
+A Floating Point Number
+<input id="myInput01" type=text value=3.14>
+<input id="myInput02" type=text value=3.14> =
+<input id="myAnswer" type=text ><br>
 
+Type "A" to Add them. You make text box for I = integers, B = Boolean, C = char, and S = string
+
+<div id="myDiv01"></div>
 <div id="myDiv01"></div>
