@@ -1,0 +1,25 @@
+<script>
+function myCheckKeys(event){
+
+    document.getElementById('myDiv01').innerHTML += 
+       String.fromCharCode(event.keyCode)
+
+}
+</script>
+<body onKeyDown="{myCheckKeys(event)}"> 
+
+<style>
+h2 {border: 5px groove black;
+    padding: 0em 1em;
+    border-radius: 16px;
+    line-height: 2;
+    box-shadow: 7px 10px gray;
+}
+
+</style>
+
+<h2 style="text-align:center;font-size:60px;;background-color:darkblue;color:white;font-family:andalus;">T3A11-Storage-Von</h1>
+
+A Floating Point Number<input id="myInput" type=text value=3.14>
+
+<div id="myDiv01"></div>
