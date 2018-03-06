@@ -1,0 +1,59 @@
+<style>
+h2 {border: 5px groove black;
+    padding: 0em 1em;
+    border-radius: 16px;
+    line-height: 2;
+    box-shadow: 7px 10px gray;
+}
+
+</style>
+
+<h2 style="text-align:center;font-size:60px;;background-color:darkblue;color:white;font-family:andalus;">T3A12-Array-Von</h1>
+
+<input type=button value="Run myStuff" onclick="
+   alert( Math.floor(Math.random()*9+1) )
+   
+
+    myStuff = new Array()
+    myStuff[0] = 'Cell Phone'
+    myStuff[1] = 'Shoes'
+    myStuff[2] = 'Cap'
+    myStuff[3] = 'Scarf'
+    myStuff[4] = 'Laptop'
+    myStuff[5] = 'Computer'
+    myStuff[6] = 'Jeans'
+    myStuff[7] = 'Shirt'
+
+
+
+     for (myLoop=0; myLoop <= 7; myLoop++ ){
+       document.getElementById('myDiv01').innerHTML += myStuff[myLoop] + ' <br>'
+  }
+
+"><br><br>
+
+<div id="myDiv01"></div><br>
+
+
+Loop this amount <input type=text id="myText01" size=6 value= 5><br>
+
+<input type=button value="Run myRandom" onclick="
+
+myRandomNumber = new Array()
+
+for (myLoop=0; myLoop <=10; myLoop++){
+      myRandomNumber[myLoop] = Math.floor(Math.random()*9+1)
+ }
+  
+myRandomNumber[0] = Math.floor(Math.random()*9+1)
+
+for (myLoop=0; myLoop <=0; myLoop++){
+   document.getElementById('myDiv02').innerHTML += myRandomNumber[0] + ' <br>'
+}
+
+"><br>
+
+<div id="myDiv02"></div>
+
+
+
