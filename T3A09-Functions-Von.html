@@ -1,0 +1,54 @@
+<style>
+ h1 {border: 5px groove black;
+    padding: 0em 1em;
+    border-radius: 16px;
+    line-height: 2;
+    box-shadow: 7px 10px gray;
+}
+
+ h2 {text-align: center;
+
+}
+ 
+</style>
+
+<h1 style="text-align:center;font-size:60px;;background-color:darkblue;color:white;font-family:andalus;">T3A09-Functions-Von</h1>
+
+
+<script>
+function myAlert(myWords){
+    document.getElementById('myDiv1').innerHTML = myWords
+}
+</script>
+
+
+<input id="myText1" size=100 type=text value="<b>VonCarl</b> <font color=red> Tongohan </font>."><br>
+
+<input type=button value="myFunction" onclick="{
+ myAlert(document.getElementById('myText1').value)
+ 
+}">
+
+<input type=button value="jQuery Function" onclick="{
+   (function (){
+      document.getElementById('myDiv1').innerHTML= 'It Works!!!'
+   })()
+}">
+
+<script>
+ 
+document.hide = function(myWords) {
+     document.getElementById('myDiv1').innerHTML= 'You Did It!!! '+myWords + ' jQuery style'
+}
+   
+    
+</script>
+
+<input type=button value=myInline onclick="{
+ (function () {
+   alert('Inline Works')
+    })()
+}"><br>
+<div id=myDiv1></div>
+
+</h2>
