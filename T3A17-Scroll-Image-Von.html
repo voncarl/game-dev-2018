@@ -1,0 +1,67 @@
+<html>
+<head>
+<style>
+h1 {border: 5px groove black;
+    padding: 0em 1em;
+    border-radius: 16px;
+    line-height: 2;
+    box-shadow: 7px 10px gray;
+}
+</style>
+<h1 style="text-align:center;font-size:20px;;background-color:darkblue;color:white;font-family:andalus;">T3A17-Scroll-Image-Von</h1>
+
+
+
+<script> 
+//Global variables here
+myBgPosY = 0;     // present vertical position
+myBgPosX = 0;    // present horizonal position
+myBgHeight = 402;    // height of background image
+myBgWidth = 653;  // width of background image
+myBgSpeedYtop = 0;
+myBgSpeedYdown = 0;    // speed moving down 
+myBgSpeedXright = 0;    // speed moving right
+myBgSpeedXleft = 0;
+<!-- ********************  Background Scrolling **************************  -->
+// myScroll function controls the moving of the background image
+function myScroll() {
+   myAuto()
+   checkAll()
+//code to control background position
+myBgPosY +=  myBgSpeedYtop;
+   if (myBgPosY > myBgHeight) {myBgPosY = 0}
+   if (myBgPosY <0) {myBgPosY = myBgHeight}
+   myBgPosY +=  myBgSpeedYdown;
+   if (myBgPosY > myBgHeight) {myBgPosY = 0}
+   if (myBgPosY <0) {myBgPosY = myBgHeight}
+   myBgPosX +=  myBgSpeedXright;
+   if (myBgPosX > myBgWidth) {myBgPosX = 0}
+   if (myBgPosX <0) {myBgPosX = myBgWidth}
+   
+    myBgPosX +=  myBgSpeedXleft;
+   if (myBgPosX > myBgWidth) {myBgPosX = 0}
+   if (myBgPosX <0) {myBgPosX = myBgWidth}
+//Actually uses the values
+   myBgObject.style.backgroundPosition = myBgPosX+" " + myBgPosY;
+}
+</script>
+
+</head>
+
+<body background="giphy.gif" onload="{
+
+myTimer = setInterval('myScroll()', 100)
+
+}" >
+
+<img  id="move1"  src="space-ship02.gif"  style="position:absolute; width:99px; height:80px; left:345px; top:115px;" onClick="myGunPrep()">  
+    
+<img  id="move1"  src="space-ship02.gif"  style="position:absolute; width:99px; height:80px; left:600px; top:415px;" onClick="myGunPrep()">  
+
+<img  id="move1"  src="space-ship02.gif"  style="position:absolute; width:99px; height:80px; left:345px; top:715px;" onClick="myGunPrep()">  
+
+<img  id="move1"  src="flying_1.gif"  style="position:absolute; width:99px; height:80px; left:335px; top:415px;" onClick="myGunPrep()">  
+
+</body>
+
+</html>
