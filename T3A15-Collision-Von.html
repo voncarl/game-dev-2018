@@ -378,66 +378,221 @@ function myGun(){
 <li> Try not to Destroy the Planets or GAME OVER!!!
 <li> Destroy The Enemy SpaceShip to Win!!!
 </ol>
-</ol>
 Enjoy!!!
 </div><br>
 
 
 <body background="giphy.gif" onload="myTimer = setInterval('myScroll()', 100)"    onkeydown="{
 if (String.fromCharCode(event.keyCode) == 'W') {
+
     document.getElementById('myW').click()
+
+} else if (String.fromCharCode(event.keyCode) == 'Q') {
+    document.getElementById('myQ').click()
+} else if (String.fromCharCode(event.keyCode) == 'E') {
+    document.getElementById('myE').click()
 } else if (String.fromCharCode(event.keyCode) == 'A') {
+
     document.getElementById('myA').click()
-} else if (String.fromCharCode(event.keyCode) == 'S') {
-    document.getElementById('myS').click()
+
 } else if (String.fromCharCode(event.keyCode) == 'D') {
+
     document.getElementById('myD').click()
-} else if (String.fromCharCode(event.keyCode) == 'F') {
+
+} else if (String.fromCharCode(event.keyCode) == 'Z') {
+
+    document.getElementById('myZ').click()
+} else if (String.fromCharCode(event.keyCode) == 'X') {
+
+    document.getElementById('myX').click()
+} else if (String.fromCharCode(event.keyCode) == 'C') {
+
+    document.getElementById('myC').click()
+
+
+} else if (String.fromCharCode(event.keyCode) == 'S') {
     document.getElementById('myFire').click()
 }    
-
-
 }">
-    
-<space><input style="background-Color : darkblue; color:white;
+
+ <table style="background-Color : lightblue; color:black;
+
     border-style : groove ;
-    border-width : 10px; border-color :powderblack;" type=button id="myFire" value="F to Fire" onClick="myGunPrep()"><br></space> 
-    
-<input style="background-Color : darkblue; color:white;
-    border-style : groove ;
-    border-width : 10px; border-color :powderblack;" type=button id="myW" value="W" onclick="{
+
+    border-width : 10px; border-color : powderblack;"
+>
+<tr>
+<td>
+<input style="background-Color : lightblue; color:black;
+
+   border-style : groove ;
+
+    border-width : 10px; border-color : powderblack;" type=button id="myQ" value="Q" onclick="{
+
+
+
+
 document.getElementById('move1').style.top =
- parseInt(document.getElementById('move1').style.top) + -10 + 'px'
  
-}">
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
 
-<input style="background-Color : darkblue; color:white;
-    border-style : groove ;
-    border-width : 10px; border-color : powderblack;" type=button id="myA" value="A" onclick="{
 document.getElementById('move1').style.left =
+
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
+
+
+
+
+}">
+&nbsp;&nbsp;&nbsp;
+
+<input style="background-Color : lightblue; color:black;
+
+    border-style : groove ;
+
+    border-width : 10px; border-color : powderblack;" type=button id="myW" value="W" onclick="{
+
+
+
+
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+
+
+
+
+
+}">
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input style="background-Color : lightblue; color:black;
+
+    border-style : groove ;
+
+    border-width : 10px; border-color : powderblack;" type=button id="myE" value="E" onclick="{
+
+
+
+
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+
+
+
+}">
+</tr>
+</td>
+<tr>
+<td>
+<input style="background-Color : lightblue; color:black;
+
+    border-style : groove ;
+
+    border-width : 10px; border-color : powderblack;" type=button id="myA" value="A" onclick="{
+
+
+
+document.getElementById('move1').style.left =
+
  parseInt(document.getElementById('move1').style.left) + -10 + 'px'
 
 }">
 
-<input style="background-Color : darkblue; color:white;
-    border-style : groove ;
-    border-width : 10px; border-color : powderblack;" type=button id="myS" value="S" onclick="{
-document.getElementById('move1').style.top =
- parseInt(document.getElementById('move1').style.top) + 10 + 'px'
- 
-}">
+
 
 <input style="background-Color : darkblue; color:white;
     border-style : groove ;
+    border-width : 10px; border-color :powderblack;" type=button id="myFire" value="S to Fire" onClick="myGunPrep()">
+</space> 
+
+
+
+
+<input style="background-Color : lightblue; color:black;
+
+    border-style : groove ;
+
     border-width : 10px; border-color : powderblack;" type=button id="myD" value="D" onclick="{
+
+
 document.getElementById('move1').style.left =
- parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+
+}">
+</tr>
+</td>
+<tr>
+<td>
+<input style="background-Color : lightblue; color:black;
+
+    border-style : groove ;
+
+    border-width : 10px; border-color : powderblack;" type=button id="myZ" value="Z" onclick="{
+
+
+
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+document.getElementById('move1').style.left =
+
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
+
+
+}">
+
+
+&nbsp;&nbsp;&nbsp;
+<input style="background-Color : lightblue; color:black;
+
+    border-style : groove ;
+
+    border-width : 10px; border-color : powderblack;" type=button id="myX" value="X&nbsp;" onclick="{
+
+
+
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+
+
+}">
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input style="background-Color : lightblue; color:black;
+
+    border-style : groove ;
+
+    border-width : 10px; border-color : powderblack;" type=button id="myC" value="C" onclick="{
+
+
+
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
  
 }">
+</tr>
+</td>
+</table>
 
 
     
-<img  id="move1"  src="mySpaceShip.png"  style="position:absolute; width:99px; height:80px; left:5px; top:415px;" onClick="myGunPrep()">  
+<img  id="move1"  src="warrior1.png"  style="position:absolute; width:99px; height:80px; left:5px; top:415px;" onClick="myGunPrep()">  
 
 </body>
 
@@ -450,7 +605,7 @@ document.getElementById('move1').style.left =
 <!-- ********************  Following should be all your images **************************  -->
 
  
-<img  id="move2"  src="warrior1.png" style="position:absolute; width:150px; height:110px;  left:1120px; top:380px;" onclick="myGunPrep()">
+<img  id="move2"  src="nightraiderfixed.png" style="position:absolute; width:150px; height:110px;  left:1120px; top:380px;" onclick="myGunPrep()">
 
 
 
@@ -498,9 +653,9 @@ Note: ontouchstart is faster than onclick but only works on touch screens or mob
 <!-- ********************  General game output **************************  -->
 
 
-<div id="myShowDiv1" style="width:300px; background-color:yellow">out 1</div>
-<div id="myShowDiv2" style="width:300px; background-color:yellow">out 2</div>
-<div id="myShowDiv3" style="width:300px; background-color:yellow">out 3</div>
+<div id="myShowDiv1" style="width:300px;">out 1</div>
+<div id="myShowDiv2" style="width:300px;">out 2</div>
+<div id="myShowDiv3" style="width:300px;">out 3</div>
 
 
 
