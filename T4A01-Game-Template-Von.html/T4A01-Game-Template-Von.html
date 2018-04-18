@@ -85,9 +85,24 @@ function checkAll(){
   if (myHitOther('move1','move3')) {
       document.getElementById('myShowDiv3').innerHTML = 'You hit the Ice Elemental'
   }
+  if (myHitOther('move1','move4')) {
+      document.getElementById('myShowDiv3').innerHTML = 'You hit the ShadoW Elemental'
+  }
 
   if (myHitOther('bullet1','move2')) {
-      document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Ball of Fire'
+      document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Fire Elemental'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  if (myHitOther('bullet1','move3')) {
+      document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Ice Elemental'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+ if (myHitOther('bullet1','move4')) {
+      document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Shadow Elemental'
       document.getElementById('bullet1').style.visibility  = 'hidden'
       document.getElementById('bullet1').style.left  = '-200px'
       clearInterval(document.myShot)
@@ -162,11 +177,13 @@ myBgObject = eval('document.body');
 
 
 
-<img  id="move1"  src="flying_1.gif"  style="position:absolute; width:99px; height:80px; left:5px; top:210px;" onClick="myGunPrep()">  
+<img  id="move1"  src="flying_1.gif"  style="position:absolute; width:99px; height:80px; left:5px; top:450px;" onClick="myGunPrep()">  
 
-<img  id="move2"  src="fireball1.gif" style="position:absolute; width:80px; height:75px;  left:800px; top:410px;"/>
+<img  id="move2"  src="fireball1.gif" style="position:absolute; width:80px; height:75px;  left:650px; top:450px;"/>
 
-<img  id="move3"  src="iceball.gif" style="position:absolute; width:90px; height:85px;  left:500px; top:210px;"/>
+<img  id="move3"  src="iceball.gif" style="position:absolute; width:110px; height:110px;  left:910px; top:210px;"/>
+
+<img  id="move4"  src="shadowball.gif" style="position:absolute; width:90px; height:90px;  left:930px; top:650px;"/>
 
 
 <input type=button value="Fire" onClick="myGunPrep()">
