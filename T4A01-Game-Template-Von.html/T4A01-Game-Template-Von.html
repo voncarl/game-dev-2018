@@ -107,6 +107,12 @@ function checkAll(){
       document.getElementById('bullet1').style.left  = '-200px'
       clearInterval(document.myShot)
   }
+ if (myHitOther('bullet1','move5')) {
+      document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Elemental King'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
 }
  
 // ********************  Object Detection  finished **************************  -->
@@ -161,16 +167,134 @@ function myGun(){
 
 <!-- ********************  onkeypress just for webpages is useless on mobile apps **************************  -->
 
-<body background="giphy.gif" onload="myTimer = setInterval('myScroll()', 100)"    onkeypress="{
-	if(event.keyCode==97){    document.getElementById('move1').style.left  = parseInt(document.getElementById('move1').style.left)-5+'px'}   // small 'a' key go left
-	if(event.keyCode==119){   document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)-5+'px'}   // small 'w' key go up
+<body background="giphy.gif" onload="myTimer = setInterval('myScroll()', 100)"    onkeydown="{
+if(event.keyCode==104) {
+    document.getElementById('myW').click()
+} else if (event.keyCode==103) {
+    document.getElementById('myQ').click()
+} else if (event.keyCode==105) {
+    document.getElementById('myE').click()
+} else if (event.keyCode==100) {
+    document.getElementById('myA').click()
+} else if (event.keyCode==102) {
+    document.getElementById('myD').click()
+} else if (event.keyCode==97) {
+    document.getElementById('myZ').click()
+} else if (event.keyCode==98) {
+    document.getElementById('myX').click()
+} else if (event.keyCode==99) {
+    document.getElementById('myC').click()
+} else if (event.keyCode==101) {
+    document.getElementById('myFire').click()
+}    
+}">
+
+ <table style="background-Color :darkred; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;"
+>
+<tr>
+<td>
+&nbsp;
+<input style="background-Color : lightgreen; color:black;
+   border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myQ" value="&nwarr;" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+document.getElementById('move1').style.left =
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
 }">
 
 
-<script>        // This object must be after the body tag
-myBgObject = eval('document.body');
-</script>
+<input style="background-Color : lightgreen; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myW" value="&uarr;" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+}">
 
+<input style="background-Color : lightgreen; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myE" value="&nearr; " onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+}">
+</tr>
+</td>
+<tr>
+<td>
+<input style="background-Color : lightgreen; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myA" value="&larr;" onclick="{
+document.getElementById('move1').style.left =
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
+}">
+
+
+
+<input style="background-Color : darkgreen; color:white;
+    border-style : groove ;
+    border-width : 10px; border-color :powderblack;" type=button id="myFire" value="&odot;" onClick="myGunPrep()">
+</space> 
+
+
+
+
+<input style="background-Color : lightgreen; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myD" value="&rarr;" onclick="{
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+}">
+</tr>
+</td>
+<tr>
+<td>
+&nbsp;
+<input style="background-Color : lightgreen; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myZ" value="&swarr;" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+document.getElementById('move1').style.left =
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
+}">
+
+
+
+<input style="background-Color : lightgreen; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myX" value="&darr;" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+}">
+
+
+<input style="background-Color : lightgreen; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myC" value="&searr;" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+}">
+</tr>
+</td>
+</table><br>
 
 
 <!-- ********************  Following should be all your images **************************  -->
@@ -179,14 +303,23 @@ myBgObject = eval('document.body');
 
 <img  id="move1"  src="flying_1.gif"  style="position:absolute; width:99px; height:80px; left:5px; top:450px;" onClick="myGunPrep()">  
 
+
+</body>
+
+<script>        // This object must be after the body tag
+myBgObject = eval('document.body');
+</script>
+
+
+
 <img  id="move2"  src="fireball1.gif" style="position:absolute; width:80px; height:75px;  left:650px; top:450px;"/>
 
-<img  id="move3"  src="iceball.gif" style="position:absolute; width:110px; height:110px;  left:910px; top:210px;"/>
+<img  id="move3"  src="iceball.gif" style="position:absolute; width:110px; height:110px;  left:910px; top:190px;"/>
 
-<img  id="move4"  src="shadowball.gif" style="position:absolute; width:90px; height:90px;  left:930px; top:650px;"/>
+<img  id="move4"  src="energyball.gif" style="position:absolute; width:90px; height:90px;  left:930px; top:690px;"/>
 
+<img  id="move5"  src="elementalking.gif" style="position:absolute; width:180px; height:180px;  left:990px; top:395px;"/>
 
-<input type=button value="Fire" onClick="myGunPrep()">
 
 
 <img  id="bullet1" src="fireball.gif" style="position:absolute; width:60px; height:55px;  left:500px; top:250px; visibility:hidden"/>
@@ -206,15 +339,19 @@ Note: ontouchstart is faster than onclick but only works on touch screens or mob
 
 
 
- 
-
-<input type=button value="Auto Down" onClick="{ 
-   document.mySpeedY += 6
+ <input type=button value="Auto Up" onClick="{ 
+   document.mySpeedY += -5
 }">
 
+<input type=button value="Auto Down" onClick="{ 
+   document.mySpeedY += 5
+}">
 
+<input type=button value="Auto Left" onClick="{
+   document.mySpeedX  +=  -5
+}"> 
 <input type=button value="Auto Right" onClick="{
-   document.mySpeedX  +=  4
+   document.mySpeedX  +=  5
 }"> 
 
 
@@ -226,5 +363,4 @@ Note: ontouchstart is faster than onclick but only works on touch screens or mob
 <div id="myShowDiv2" style="width:300px; background-color:yellow">out 2</div>
 <div id="myShowDiv3" style="width:300px; background-color:yellow">out 3</div>
 
-</body>
 </html>
