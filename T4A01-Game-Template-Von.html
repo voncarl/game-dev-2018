@@ -86,7 +86,10 @@ function checkAll(){
       document.getElementById('myShowDiv3').innerHTML = 'You hit the Ice Elemental'
   }
   if (myHitOther('move1','move4')) {
-      document.getElementById('myShowDiv3').innerHTML = 'You hit the ShadoW Elemental'
+      document.getElementById('myShowDiv3').innerHTML = 'You hit the Shadow Elemental'
+  }
+if (myHitOther('move1','move5')) {
+      document.getElementById('myShowDiv3').innerHTML = 'You hit the Elemental King'
   }
 
   if (myHitOther('bullet1','move2')) {
@@ -122,7 +125,9 @@ document.mySpeedY = 0;
 function myAuto(){
   if(parseInt(document.getElementById('move1').style.left) > window.innerWidth - document.getElementById('move1').width){
        document.mySpeedX *= -1
-   }
+   } else if(parseInt(document.getElementById('move1').style.left) < window.innerWidth - document.getElementById('move1').width) {
+       document.mySpeedX *= +1
+  }
   document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+document.mySpeedX+'px'
   document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+document.mySpeedY+'px'
 // auto moving "move2" should occur here similar to the above.
