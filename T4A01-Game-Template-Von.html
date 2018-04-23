@@ -125,8 +125,10 @@ document.mySpeedY = 0;
 function myAuto(){
   if(parseInt(document.getElementById('move1').style.left) > window.innerWidth - document.getElementById('move1').width){
        document.mySpeedX *= -1
-   } else if(parseInt(document.getElementById('move1').style.left) < window.innerWidth - document.getElementById('move1').width) {
-       document.mySpeedX *= +1
+   } else if(parseInt(document.getElementById('move1').style.top) > window.innerHeight - document.getElementById('move1').height) {
+       document.mySpeedY *= -1
+   } else if(parseInt(document.getElementById('move1').style.left) < window.innerWidth + document.getElementById('move1').width) {
+       document.mySpeedX *= 1
   }
   document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+document.mySpeedX+'px'
   document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+document.mySpeedY+'px'
