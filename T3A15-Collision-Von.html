@@ -294,7 +294,7 @@ function myGun(){
 <!-- ********************  onkeypress just for webpages is useless on mobile apps **************************  -->
 
 
-<body background="giphy.gif" onload="myTimer = setInterval('myScroll()', 100)"    onkeypress="{
+<body background="giphy.gif" onload="myTimer = setInterval('myScroll()', 100)"    onkeydown="{
 if (String.fromCharCode(event.keyCode) == 'W') {
     document.getElementById('myW').click()
 } else if (String.fromCharCode(event.keyCode) == 'Q') {
@@ -478,6 +478,8 @@ parseInt(document.getElementById('move1').style.left) + 10 + 'px'
 Note: ontouchstart is faster than onclick but only works on touch screens or mobile  **************************  -->
 
 <img id="Nebula3" src="Nebula3.png" style="position:absolute; width:1890; height:1070; left:-190; top:-40;"/>
+
+
 
 
 
