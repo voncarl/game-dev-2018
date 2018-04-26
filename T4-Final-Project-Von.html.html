@@ -10,8 +10,8 @@ h1 {border: 5px groove black;
 
 progress {
   border: none;
-  width: 250px;
-  height: 30px;
+  width: 300px;
+  height: 25px;
   background: crimson;
 }
 
@@ -38,10 +38,13 @@ progress::-webkit-progress-bar {
 <h1 style="text-align:center;font-size:25px;;background-color:darkblue;color:white;font-family:andalus;">T4-Final-Project-Von</h1>
 
 
-<b style="background-color:lightblue;color:red;">HEALTH:</b><div><progress id="health" min="0" max="100" value="100" /></div>
 
 
-<script> 
+<b style="background-color:lightblue;color:red;">HEALTH:</b>
+<progress id=playerhealth min=0 max=100 value=100></progress>
+
+<script>
+
 //Global variables here
 myBgPosY = 0;     // present vertical position
 myBgPosX = 0;    // present horizonal position
@@ -110,28 +113,29 @@ function checkAll(){
 }
  
 
-  if (health <= 0) {
-  document.getElementById('myShowDiv3').innerHTML = 'GAME OVER'
-  location='T4A01-Game-Template-Von.html'
- }
-
   if (myHitOther('move1','move2')) {
-      document.getElementById('health').value -= 1
+      document.getElementById('playerhealth').value -= 1
   }  
   
 
   if (myHitOther('move1','move3')) {
-      document.getElementById('health').value -= 1
+      document.getElementById('playerhealth').value -= 1
   }
 
 
   if (myHitOther('move1','move4')) {
-        document.getElementById('health').value -= 1
+        document.getElementById('playerhealth').value -= 1
   }
 
 
-if (myHitOther('move1','move5')) {
-      document.getElementById('health').value -= 5
+ if (myHitOther('move1','move5')) {
+      document.getElementById('playerhealth').value -= 5
+  }
+
+if (document.getElementById('playerhealth').value <= 0) {
+    document.getElementById('myShowDiv3').innerHTML = 'GAME OVER'
+   location='T4-Final-Project-Von.html'
+      
   }
 
   if (myHitOther('bullet1','move2')) {
@@ -169,8 +173,10 @@ function myAuto(){
        document.mySpeedX *= -1
    } else if(parseInt(document.getElementById('move1').style.top) > window.innerHeight - document.getElementById('move1').height) {
        document.mySpeedY *= -1
-   } else if(parseInt(document.getElementById('move1').style.left) < window.innerWidth + document.getElementById('move1').width) {
-       document.mySpeedX *= 1
+   } else if(parseInt(document.getElementById('move1').style.left) < 0) {
+       document.mySpeedX *= -1
+  } else if(parseInt(document.getElementById('move1').style.top) < 0) {
+       document.mySpeedY *= -1
   }
   document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+document.mySpeedX+'px'
   document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+document.mySpeedY+'px'
