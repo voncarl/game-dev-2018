@@ -7,33 +7,81 @@ h1 {border: 5px groove black;
     line-height: 2;
     box-shadow: 7px 10px gray;
 }
-
 progress {
   border: none;
   width: 300px;
   height: 25px;
   background: crimson;
 }
-
 progress {
   color: lightblue;
 }
-
 progress::-webkit-progress-value {
   background: lightblue;
 }
-
 progress::-moz-progress-bar {
   background: lightcolor;
 }
-
 progress::-webkit-progress-value {
   background: red;
 }
-
 progress::-webkit-progress-bar {
   background: white;
 }
+
+@keyframes fire {
+    0%   {left:650px; top:450px;}
+    25%  {left:650px; top:150px;}
+    50%  {left:650px; top:450px;}
+    75%  {left:650px; top:780px;}
+    100% {left:650px; top:450px;}
+} 
+
+ #move2 {
+    position: absolute;
+    animation-name: fire;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ice {
+    0%   {left:350px; top:450px;}
+    25%  {left:350px; top:150px;}
+    50%  {left:350px; top:450px;}
+    75%  {left:350px; top:780px;}
+    100% {left:350px; top:450px;}
+} 
+
+ #move3 {
+    position: absolute;
+    animation-name: ice;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: reverse;
+}
+
+@keyframes shadow {
+    0%   {left:930px; top:450px;}
+    25%  {left:930px; top:150px;}
+    50%  {left:930px; top:450px;}
+    75%  {left:930px; top:780px;}
+    100% {left:930px; top:450px;}
+} 
+
+ #move4 {
+    position: absolute;
+    animation-name: shadow;
+    animation-duration: 3s;
+    animation-delay: -1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: reverse;
+}
+  
+
+
 </style>
 <h1 style="text-align:center;font-size:25px;;background-color:darkblue;color:white;font-family:andalus;">T4-Final-Project-Von</h1>
 
@@ -44,7 +92,6 @@ progress::-webkit-progress-bar {
 <progress id=playerhealth min=0 max=100 value=100></progress>
 
 <script>
-
 //Global variables here
 myBgPosY = 0;     // present vertical position
 myBgPosX = 0;    // present horizonal position
@@ -98,46 +145,32 @@ function myHitOther(my1,my2){
    }
 }
 // Group all your detection code here
-
-
-
  
 function checkAll(){
  
-
   if (myHitXY('move1',200,280)) {
-
     document.getElementById('myShowDiv3').innerHTML = ''
-
   } else {document.getElementById('myShowDiv3').innerHTML = ''
 }
  
-
   if (myHitOther('move1','move2')) {
       document.getElementById('playerhealth').value -= 1
   }  
   
-
   if (myHitOther('move1','move3')) {
       document.getElementById('playerhealth').value -= 1
   }
-
-
   if (myHitOther('move1','move4')) {
         document.getElementById('playerhealth').value -= 1
   }
-
-
  if (myHitOther('move1','move5')) {
       document.getElementById('playerhealth').value -= 5
   }
-
 if (document.getElementById('playerhealth').value <= 0) {
     document.getElementById('myShowDiv3').innerHTML = 'GAME OVER'
    location='T4-Final-Project-Von.html'
       
   }
-
   if (myHitOther('bullet1','move2')) {
       document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Fire Elemental'
       document.getElementById('bullet1').style.visibility  = 'hidden'
@@ -369,11 +402,11 @@ myBgObject = eval('document.body');
 
 <img  id="move2"  src="fireball1.gif" style="position:absolute; width:80px; height:75px;  left:650px; top:450px;"/>
 
-<img  id="move3"  src="iceball.gif" style="position:absolute; width:110px; height:110px;  left:910px; top:190px;"/>
+<img  id="move3"  src="iceball.gif" style="position:absolute; width:110px; height:110px;  left:350px; top:450px;"/>
 
-<img  id="move4"  src="energyball.gif" style="position:absolute; width:90px; height:90px;  left:930px; top:690px;"/>
+<img  id="move4"  src="energyball.gif" style="position:absolute; width:90px; height:90px;  left:930px; top:450px;"/>
 
-<img  id="move5"  src="elementalking.gif" style="position:absolute; width:180px; height:180px;  left:990px; top:395px;"/>
+<img  id="move5"  src="elementalking.gif" style="position:absolute; width:180px; height:180px;  left:1080px; top:395px;"/>
 
 
 
