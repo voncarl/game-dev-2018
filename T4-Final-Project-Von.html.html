@@ -166,6 +166,13 @@ function checkAll(){
  if (myHitOther('move1','move5')) {
       document.getElementById('playerhealth').value -= 5
   }
+
+   if (myHitOther('move1','life')) {
+      document.getElementById('playerhealth').value *= 5
+      document.getElementById('life').style.visibility = 'hidden'
+}
+
+
 if (document.getElementById('playerhealth').value <= 0) {
     document.getElementById('myShowDiv3').innerHTML = 'GAME OVER'
    location='T4-Final-Project-Von.html'
@@ -408,6 +415,9 @@ myBgObject = eval('document.body');
 <img  id="move4"  src="energyball.gif" style="position:absolute; width:90px; height:90px;  left:930px; top:250px;"/>
 
 <img  id="move5"  src="elementalking.gif" style="position:absolute; width:180px; height:180px;  left:1080px; top:395px;"/>
+
+
+<img  id="life"  src="jumpingheartupanddown_by_camdencc-d5u6t9u.gif" style="position:absolute; width:25px; height:25px;  left:520px; top:250px; visibility:visible;"/>
 
 
 
