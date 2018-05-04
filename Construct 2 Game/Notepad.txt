@@ -1,0 +1,494 @@
+<html>
+<head>
+
+<style>
+h1 {border: 5px groove black;
+    padding: 0em 1em;
+    border-radius: 16px;
+    line-height: 2;
+    box-shadow: 7px 10px gray;
+}
+</style>
+<h1 style="text-align:center;font-size:25px;;background-color:darkblue;color:white;font-family:andalus;">T3A15-Collisions-Von</h1>
+
+
+
+
+<script> 
+//Global variables here
+myBgPosY = 0;     // present vertical position
+myBgPosX = 0;    // present horizonal position
+myBgHeight = 402;    // height of background image
+myBgWidth = 753;  // width of background image
+myBgSpeedYtop = 0;
+myBgSpeedYdown = 1;    // speed moving down 
+myBgSpeedXright = 0;    // speed moving right
+myBgSpeedXleft = 0;
+<!-- ********************  Background Scrolling **************************  -->
+// myScroll function controls the moving of the background image
+function myScroll() {
+   myAuto()
+   checkAll()
+//code to control background position
+myBgPosY +=  myBgSpeedYtop;
+   if (myBgPosY > myBgHeight) {myBgPosY = 0}
+   if (myBgPosY <0) {myBgPosY = myBgHeight}
+   myBgPosY +=  myBgSpeedYdown;
+   if (myBgPosY > myBgHeight) {myBgPosY = 0}
+   if (myBgPosY <0) {myBgPosY = myBgHeight}
+   myBgPosX +=  myBgSpeedXright;
+   if (myBgPosX > myBgWidth) {myBgPosX = 0}
+   if (myBgPosX <0) {myBgPosX = myBgWidth}
+   
+    myBgPosX +=  myBgSpeedXleft;
+   if (myBgPosX > myBgWidth) {myBgPosX = 0}
+   if (myBgPosX <0) {myBgPosX = myBgWidth}
+//Actually uses the values
+   myBgObject.style.backgroundPosition = myBgPosX+" " + myBgPosY;
+}
+// ********************  Object Detection Starts below **************************  -->
+// myHitXY function determines if any object has hit an x, y location. Note it is better to use the myHitOther function
+ 
+function myHitXY(my1,X,Y){ //detect when object is at a location X,Y
+   left1  = parseInt(document.getElementById(my1).style.left)
+   right1   = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   if ((left1   <= X ) &&      	   
+       (right1  >= X ) &&
+       (top1    <= Y ) &&
+       (bottom1 >= Y ) ){
+       return true
+   }
+}
+// myHitOther function determines if two obejcts have hit each other. 
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+// Group all your detection code here
+ 
+function checkAll(){
+    
+   if (myHitOther('move1','planet1')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html' 
+   }
+   
+    if (myHitOther('move1','planet2')) {
+       document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+       location='T3A15-Collision-Von.html'  
+   }
+   
+   if (myHitOther('move1','planet3')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'  
+   }
+ 
+  if (myHitOther('move1','move2')) {
+      document.getElementById('myDiv01').innerHTML += 'Congratulations'
+      location='T3A15-Collision-Von.html'
+  }
+  
+  if (myHitOther('move1','planet4')) {
+        document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+        location='T3A15-Collision-Von.html' 
+        
+  }
+  
+  if (myHitOther('move1','planet5')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      
+  }
+  
+  if (myHitOther('move1','planet6')) {
+     document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+  }
+  
+  if (myHitOther('move1','planet7')) {
+       document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+       location='T3A15-Collision-Von.html'
+  }
+  
+  if (myHitOther('move1','planet8')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+       location='T3A15-Collision-Von.html'
+  }
+  
+  if (myHitOther('move1','planet9')) {
+       document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+       location='T3A15-Collision-Von.html'
+  }
+  
+  if (myHitOther('move1','planet10')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+       location='T3A15-Collision-Von.html'
+  }
+  
+  if (myHitOther('move1','planet11')) {
+       document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+       location='T3A15-Collision-Von.html'
+  }
+  
+  if (myHitOther('bullet1','planet1')) {
+     document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','planet2')) {
+     document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','planet3')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','planet4')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','planet5')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','planet6')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+       location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+   if (myHitOther('bullet1','planet7')) {
+     document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','planet8')) {
+     document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','planet9')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+    if (myHitOther('bullet1','planet10')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+   if (myHitOther('bullet1','planet11')) {
+      document.getElementById('myDiv01').innerHTML += 'GAME OVER'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+  
+  if (myHitOther('bullet1','move2')) {
+      document.getElementById('myDiv01').innerHTML += 'Congratulations'
+      location='T3A15-Collision-Von.html'
+      document.getElementById('bullet1').style.visibility  = 'hidden'
+      document.getElementById('bullet1').style.left  = '-200px'
+      clearInterval(document.myShot)
+  }
+}
+ 
+// ********************  Object Detection  finished **************************  -->
+// ********************  Object Motion Below **************************  -->
+document.mySpeedX = 0;
+document.mySpeedY = 0;
+function myAuto(){
+  if(parseInt(document.getElementById('move1').style.left) > window.innerWidth - document.getElementById('move1').width){
+       document.mySpeedX *= -1
+   }
+  document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+document.mySpeedX+'px'
+  document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+document.mySpeedY+'px'
+// auto moving "move2" should occur here similar to the above.
+//folowing code showes where move 2 and move3, move4 etc are located
+document.getElementById('myShowDiv1').innerHTML = 'move1 x='+parseInt(document.getElementById('move1').style.left) +
+', y='+parseInt(document.getElementById('move1').style.top)
+document.getElementById('myShowDiv2').innerHTML = 'move2 x='+parseInt(document.getElementById('move2').style.left) +
+', y='+parseInt(document.getElementById('move2').style.top) +
+'<br> move2 x='+parseInt(document.getElementById('move2').style.left) +', y='+parseInt(document.getElementById('move2').style.top) +
+'<br> move2 x='+parseInt(document.getElementById('move2').style.left) +', y='+parseInt(document.getElementById('move2').style.top)
+}
+function myGunPrep(){
+    document.getElementById('bullet1').style.visibility  = 'visible'
+    document.getElementById('bullet1').style.left  = document.getElementById('move1').style.left
+    document.getElementById('bullet1').style.top   = document.getElementById('move1').style.top
+    
+   clearInterval(document.myShot)
+   document.myShot = setInterval('myGun()', 25) // calls the function every 30 mille seconds
+}
+function myGun(){
+    document.getElementById('bullet1').style.left  = parseInt(document.getElementById('bullet1').style.left) + 30 + 'px'
+}
+</script>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ********************  Here the webpage begins **************************  -->
+
+
+<!-- ********************  onkeypress just for webpages is useless on mobile apps **************************  -->
+
+
+<body background="giphy.gif" onload="myTimer = setInterval('myScroll()', 100)"    onkeydown="{
+if (String.fromCharCode(event.keyCode) == 'W') {
+    document.getElementById('myW').click()
+} else if (String.fromCharCode(event.keyCode) == 'Q') {
+    document.getElementById('myQ').click()
+} else if (String.fromCharCode(event.keyCode) == 'E') {
+    document.getElementById('myE').click()
+} else if (String.fromCharCode(event.keyCode) == 'A') {
+    document.getElementById('myA').click()
+} else if (String.fromCharCode(event.keyCode) == 'D') {
+    document.getElementById('myD').click()
+} else if (String.fromCharCode(event.keyCode) == 'Z') {
+    document.getElementById('myZ').click()
+} else if (String.fromCharCode(event.keyCode) == 'X') {
+    document.getElementById('myX').click()
+} else if (String.fromCharCode(event.keyCode) == 'C') {
+    document.getElementById('myC').click()
+} else if (String.fromCharCode(event.keyCode) == 'S') {
+    document.getElementById('myFire').click()
+}    
+}">
+
+ <table style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;"
+>
+<tr>
+<td>
+<input style="background-Color : lightblue; color:black;
+   border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myQ" value="Q" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+document.getElementById('move1').style.left =
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
+}">
+&nbsp;&nbsp;&nbsp;
+
+<input style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myW" value="W" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+}">
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myE" value="E" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + -10 + 'px'
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+}">
+</tr>
+</td>
+<tr>
+<td>
+<input style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myA" value="A" onclick="{
+document.getElementById('move1').style.left =
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
+}">
+
+
+
+<input style="background-Color : darkblue; color:white;
+    border-style : groove ;
+    border-width : 10px; border-color :powderblack;" type=button id="myFire" value="S to Fire" onClick="myGunPrep()">
+</space> 
+
+
+
+
+<input style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myD" value="D" onclick="{
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+}">
+</tr>
+</td>
+<tr>
+<td>
+<input style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myZ" value="Z" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+document.getElementById('move1').style.left =
+ parseInt(document.getElementById('move1').style.left) + -10 + 'px'
+}">
+
+
+&nbsp;&nbsp;&nbsp;
+<input style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myX" value="X&nbsp;" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+}">
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input style="background-Color : lightblue; color:black;
+    border-style : groove ;
+    border-width : 10px; border-color : powderblack;" type=button id="myC" value="C" onclick="{
+document.getElementById('move1').style.top =
+ 
+parseInt(document.getElementById('move1').style.top) + 10 + 'px'
+document.getElementById('move1').style.left =
+ 
+parseInt(document.getElementById('move1').style.left) + 10 + 'px'
+ 
+}">
+</tr>
+</td>
+</table><br>
+<div id="myDiv01" style="width:200px;background-color:yellow;">...</div>
+
+    
+<img  id="move1"  src="warrior1.png"  style="position:absolute; width:99px; height:80px; left:5px; top:415px;" onClick="myGunPrep()">  
+
+</body>
+
+
+
+
+
+
+
+<!-- ********************  Following should be all your images **************************  -->
+
+ 
+<img  id="move2"  src="nightraiderfixed.png" style="position:absolute; width:150px; height:110px;  left:1120px; top:380px;" onclick="myGunPrep()">
+
+
+
+
+
+
+<img  id="bullet1" src="bullet2.png" style="position:absolute;align:center; width:200px; height:78px;  left:0px; top:0px; visibility:hidden"/>
+
+
+
+
+
+<!-- ******************** This are the planets the main object hits **************************  -->
+
+<img id="planet1" src="Asteroids_256x256_002.png" style="position:absolute; width:110; height:80; left:1090; top:90;"/>
+
+<img id="planet2" src="Asteroids_256x256_003.png" style="position:absolute; width:90; height:82; left:1040; top:635;"/>
+
+<img id="planet3" src="Asteroids_256x256_005.png" style="position:absolute; width:129; height:119; left:600; top:460;"/>
+
+<img id="planet4" src="Asteroids_256x256_004.png" style="position:absolute; width:175; height:159; left:890; top:230;"/>
+
+<img id="planet5" src="Asteroids_256x256_010.png" style="position:absolute; width:75; height:69; left:560; top:100;"/>
+ 
+<img id="planet6" src="Asteroids_256x256_007.png" style="position:absolute; width:95; height:89; left:360; top:280;"/>\
+
+<img id="planet7" src="Asteroids_256x256_006.png" style="position:absolute; width:94; height:85; left:260; top:500;"/>
+
+<img id="planet8" src="Asteroids_256x256_011.png" style="position:absolute; width:94; height:85; left:760; top:715;"/>
+
+<img id="planet9" src="Asteroids_128x128_008.png" style="position:absolute; width:100; height:85; left:360; top:700;"/>
+
+<img id="planet10" src="Asteroids_256x256_001.png" style="position:absolute; width:90; height:85; left:610; top:270;"/>
+
+<img id="planet11" src="Asteroids_256x256_012.png" style="position:absolute; width:90; height:85; left:890; top:510;"/>
+<!-- ********************  Now all the buttons. 
+Note: ontouchstart is faster than onclick but only works on touch screens or mobile  **************************  -->
+
+<img id="Nebula3" src="Nebula3.png" style="position:absolute; width:1890; height:1070; left:-190; top:-40;"/>
+
+
+
+
+
+<!-- ********************  General game output **************************  -->
+
+<div id="myShowDiv1" style="width:300px;">out 1</div>
+<div id="myShowDiv2" style="width:300px;">out 2</div>
+<div id="myShowDiv3" style="width:300px;">out 3</div>
+
+
+
+</html>
