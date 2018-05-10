@@ -7,13 +7,25 @@ h1 {border: 5px groove black;
     line-height: 2;
     box-shadow: 7px 10px gray;
 }
-progress {
+ #playerhealth {
   border: none;
   width: 300px;
   height: 25px;
   background: crimson;
 }
-progress {
+ #playerhealth {
+  color: lightblue;
+}
+ #enemyhealth {
+  position: absolute;
+  left: 1070px;
+  top: 370px;
+  border: none;
+  width: 200px;
+  height: 15px;
+  background: crimson;
+}
+ #enemyhealth {
   color: lightblue;
 }
 progress::-webkit-progress-value {
@@ -78,10 +90,8 @@ progress::-webkit-progress-bar {
     animation-iteration-count: infinite;
     animation-timing-function: ease;
     animation-direction: reverse;
+ }
 }
-  
-
-
 </style>
 <h1 style="text-align:center;font-size:25px;;background-color:darkblue;color:white;font-family:andalus;">T4-Final-Project-Von</h1>
 
@@ -89,9 +99,23 @@ progress::-webkit-progress-bar {
 
 
 <b style="background-color:lightblue;color:red;">HEALTH:</b>
+<p style="position:absolute; left:200px; top:73px;">DRAKE</p>
 <progress id=playerhealth min=0 max=100 value=100></progress>
 
+
+
+<progress id=enemyhealth min=0 max=50 value=50></progress>
+<p style="position:absolute; left:1112px; top:357px; font-size:13px;">ELEMENTAL KING</p>
+
+
 <script>
+
+
+
+
+
+
+
 //Global variables here
 myBgPosY = 0;     // present vertical position
 myBgPosX = 0;    // present horizonal position
@@ -174,11 +198,12 @@ function checkAll(){
 
 
 if (document.getElementById('playerhealth').value <= 0) {
-    document.getElementById('myShowDiv3').innerHTML = 'GAME OVER'
+    alert('GAME OVER!!!')
    location='T4-Final-Project-Von.html'
       
   }
   if (myHitOther('bullet1','move2')) {
+      document.getElementById('myScore01').value += 150
       document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Fire Elemental'
       document.getElementById('bullet1').style.visibility  = 'hidden'
       document.getElementById('bullet1').style.left  = '-200px'
@@ -196,13 +221,17 @@ if (document.getElementById('playerhealth').value <= 0) {
       document.getElementById('bullet1').style.left  = '-200px'
       clearInterval(document.myShot)
   }
- if (myHitOther('bullet1','move5')) {     
+ if (myHitOther('bullet1','move5')) { 
+      document.getElementById('enemyhealth').value -= 5    
       document.getElementById('myShowDiv3').innerHTML = 'The bullet hit the Elemental King'
-      location='T4-Final-Project-Lvl2-Von.html'
       document.getElementById('bullet1').style.visibility  = 'hidden'
       document.getElementById('bullet1').style.left  = '-200px'
       clearInterval(document.myShot)
-  }
+}
+ if (document.getElementById('enemyhealth').value <= 0) {
+    alert("YOU WON THE 1st ROUND!!!!")
+    location='T4-Final-Project-Lvl2-Von.html' 
+ }
 }
  
 // ********************  Object Detection  finished **************************  -->
